@@ -1,5 +1,5 @@
+cat << 'EOF' > .github/workflows/build-windows.yml
 name: Build FastAlign Windows 32-bit
-
 on:
   push:
     branches:
@@ -20,7 +20,7 @@ jobs:
         update: true
         install: >
           mingw-w64-i686-gcc
-          mingw-w64-i686-gcc-c++
+          mingw-w64-i686-g++
 
     - name: Build FastAlign
       run: |
