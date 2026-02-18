@@ -1,5 +1,5 @@
-cat << 'EOF' > .github/workflows/build-windows.yml
 name: Build FastAlign Windows 32-bit
+
 on:
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
 
     - name: Build FastAlign
       run: |
-        # Copy headers to root to fix src/ include paths
+        # Copy headers to root to fix include paths
         cp src/*.h .
         i686-w64-mingw32-g++ -O3 -std=c++11 -static -Isrc src/fast_align.cc -o fast_align.exe
         i686-w64-mingw32-g++ -O3 -std=c++11 -static -Isrc src/atools.cc -o atools.exe
